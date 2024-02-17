@@ -11,13 +11,6 @@ const starContainerStyle = {
   display: "flex",
 };
 
-StarRating.propTypes = {
-  maxRating: ReactPropTypes.number,
-  color: ReactPropTypes.string,
-  size: ReactPropTypes.number,
-  className: ReactPropTypes.string,
-};
-
 function StarRating({
   maxRating = 5,
   color = "#fcc419",
