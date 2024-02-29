@@ -1,35 +1,37 @@
-import { useState } from "react";
-import Star from "./Star";
+import { useState } from 'react';
+import Star from './Star';
 
 const containerStyle = {
-  display: "flex",
-  alignItems: "center",
-  gap: "16px",
+  display: 'flex',
+  alignItems: 'center',
+  gap: '16px',
 };
 
 const starContainerStyle = {
-  display: "flex",
+  display: 'flex',
 };
 
 function StarRating({
   maxRating = 5,
-  color = "#fcc419",
+  color = '#fcc419',
   size = 48,
   className,
+  onSetRating,
 }) {
   const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
 
   function handleRating(rating) {
     setRating(rating);
+    onSetRating(rating);
   }
 
   const textStyle = {
-    lineHeight: "1",
-    margin: "0",
+    lineHeight: '1',
+    margin: '0',
     color,
     fontSize: `${size / 1.5}px`,
-    className: "",
+    className: '',
   };
 
   return (
@@ -48,7 +50,7 @@ function StarRating({
           />
         ))}
       </div>
-      <p style={textStyle}>{tempRating || rating || ""}</p>
+      <p style={textStyle}>{tempRating || rating || ''}</p>
     </div>
   );
 }
