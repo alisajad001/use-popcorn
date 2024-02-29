@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import StarRating from "./StarRating";
-import Loader from "./Loader";
+import { useEffect, useState } from 'react';
+import StarRating from './StarRating';
+import Loader from './Loader';
 
 function SelectedMovie({ selectedId, onCloseMovie, API_KEY }) {
   const [movie, setMovie] = useState({});
@@ -24,7 +24,7 @@ function SelectedMovie({ selectedId, onCloseMovie, API_KEY }) {
       try {
         setIsLoading(true);
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`
+          `http://www.omdbapi.com/?apikey=${API_KEY}&i=${selectedId}`,
         );
         const data = await res.json();
         console.log(data);
