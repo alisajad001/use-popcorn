@@ -39,6 +39,11 @@ function SelectedMovie({ selectedId, onCloseMovie, API_KEY }) {
     getMovieDetails();
   }, [selectedId]);
 
+  useEffect(() => {
+    if (!title) return;
+    document.title = `Movie - ${title}`;
+  }, [title]);
+
   return (
     <>
       {isLoading ? (
