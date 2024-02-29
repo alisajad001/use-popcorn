@@ -29,6 +29,10 @@ export default function App() {
     setSelectedId(null);
   }
 
+  function handleAddWatched(movie) {
+    setWatched((watched) => [...watched, movie]);
+  }
+
   useEffect(() => {
     const controllers = new AbortController();
 
@@ -96,6 +100,8 @@ export default function App() {
               API_KEY={KEY}
               isloading={isloading}
               setIsLoading={setIsLoading}
+              setWatched={setWatched}
+              onAddWatched={handleAddWatched}
             />
           ) : (
             <>
