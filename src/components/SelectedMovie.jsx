@@ -42,6 +42,10 @@ function SelectedMovie({ selectedId, onCloseMovie, API_KEY }) {
   useEffect(() => {
     if (!title) return;
     document.title = `Movie - ${title}`;
+
+    return () => {
+      document.title = 'Film Finder | Ali Sajad';
+    };
   }, [title]);
 
   return (
